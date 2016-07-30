@@ -71,6 +71,12 @@ function update_game()
   end
  end
  
+ for ob in all(obs) do
+  if (ob.x<-20) then
+   del(obs, ob)
+  end
+ end
+ 
 end
 
 function draw_game()
@@ -134,7 +140,6 @@ function create_obstacle(x, y, s)
  end
  ob.update = function()
   ob.x -= 4
-  
  end
  
  return ob
